@@ -1,0 +1,36 @@
+<!-- Here's a JavaScript function that checks if a word is a palindrome based on the given instructions:-->
+
+
+
+function isPalindrome(word) {
+    <!-- Convert the word to lowercase to ignore case sensitivity -->
+    word = word.toLowerCase();
+    
+    <!-- Base case: an empty word or a word containing a single character is a palindrome -->
+    if (word.length <= 1) {
+      return true;
+    }
+    
+    <!-- Check if the first and last characters of the word are equal -->
+    if (word[0] === word[word.length - 1]) {
+      <!-- Recursively check the rest of the word without the first and last characters -->
+      return isPalindrome(word.slice(1, word.length - 1));
+    }
+    
+    <!-- If the first and last characters are different, it's not a palindrome -->
+    return false;
+  }
+  
+   <!-- Test the function -->
+  console.log(isPalindrome("gag"));    // true
+  console.log(isPalindrome("kayak"));  // true
+  console.log(isPalindrome("php"));    // true
+  console.log(isPalindrome("radar"));  // true
+  console.log(isPalindrome("hello"));  // false
+  console.log(isPalindrome("world"));  // false
+  
+  
+  
+  <!-- The isPalindrome function takes a word as an argument and recursively checks if it is a palindrome. It converts the word to lowercase to ignore case sensitivity. If the word has a length of 0 or 1, it is considered a palindrome. Otherwise, it compares the first and last characters of the word. If they are equal, it calls itself recursively with the rest of the word (excluding the first and last characters). If the first and last characters are different, it returns false, indicating that the word is not a palindrome.
+  
+  The function is tested with some example words, printing true for palindromes and false for non-palindromes. -->
